@@ -1,0 +1,48 @@
+To make a simple example of plantUML of class diagram
+
+@startuml test
+
+title test
+
+'try to use single comment'
+/'
+try to use multiple comments
+'/
+class Myclass1
+
+class Myclass2 {
+    + Date mDate
+    + Date getDate()
+}
+note left:これはノートです
+
+class Myclass3 {
+    + test1
+    ~ test2
+    # test3
+    - test4
+
+    + testMethod1()
+    ~ testMethod2()
+    # testMethod3()
+    - testMethod4()
+
+    + {static} testMethod5()
+    + {abstract} testMethod6()
+}
+
+interface TestIf 
+note left:これはノートです
+
+enum TestEnum
+TestEnum <--TestIf
+TestIf <..Myclass3
+Myclass3 <|--Myclass1
+Myclass1 <|..Myclass2
+Myclass2 o..Myclass3
+TestIf *..Myclass1
+
+
+@enduml
+
+In Visual Studio Code, it will show a simple class diagram using alt+D.
